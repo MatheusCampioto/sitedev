@@ -29,7 +29,7 @@ body {
 }
 .hero button:hover { background: #00f2fe; color: #fff; }
 
-/* Seções mais bonitas */
+/* Seções */
 section {
   padding: 60px 30px;
   max-width: 1000px;
@@ -45,7 +45,7 @@ section:nth-child(even) {
   background: #f5f7fa;
 }
 
-/* Títulos decorados */
+/* Títulos */
 section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -76,14 +76,13 @@ section h2::after {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* Lista de habilidades em badges */
+/* Habilidades (badges) */
 #habilidades ul {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   padding: 0;
 }
-
 #habilidades li {
   background: linear-gradient(135deg, #4facfe, #00f2fe);
   color: #fff;
@@ -93,19 +92,33 @@ section h2::after {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 #habilidades li:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Contato */
-#contato p, #contato a {
-  font-size: 1rem;
-  margin: 5px 0;
-  color: #4facfe;
+#contato p {
+  margin: 10px 0;
 }
-#contato a:hover { color: #00f2fe; }
+
+/* Botões de contato (mesmo estilo das habilidades) */
+.contato-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 5px;
+}
+.contato-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
 
 /* Rodapé */
 footer {
@@ -132,34 +145,4 @@ footer {
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
   section { padding: 30px 20px; }
-}
-
-#contato a {
-  display: inline-block;
-  margin: 5px;
-  padding: 8px 12px;
-  background-color: #0366d6; /* azul GitHub */
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-#contato a:hover {
-  background-color: #024c9a;
-}
-
-.whatsapp-btn {
-  display: inline-block;
-  background-color: #25D366; /* verde oficial do WhatsApp */
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-  background-color: #1ebe5d;
 }

@@ -76,6 +76,18 @@ section h2::after {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
+#artigos a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #4facfe;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#artigos a:hover {
+  color: #00f2fe;
+}
+
 /* Habilidades (badges) */
 #habilidades ul {
   display: flex;

@@ -22,12 +22,18 @@ body {
 .hero h1 { font-size: 3rem; }
 .hero p { font-size: 1.3rem; margin-top: 10px; }
 .hero button {
-  background: #fff; color: #00f2fe;
-  padding: 12px 25px; border-radius: 30px;
-  border: none; margin-top: 20px; cursor: pointer;
-  transition: 0.3s;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.hero button:hover { background: #00f2fe; color: #fff; }
+.hero button:hover {
+  transform: scale(1.05);
+}
 
 /* Seções */
 section {
@@ -76,16 +82,27 @@ section h2::after {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
+/* Grid para artigos e projetos */
+#artigos, #projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Links "Leia mais" como botões */
 #artigos a {
   display: inline-block;
   margin-top: 10px;
-  color: #4facfe;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
   font-weight: bold;
   text-decoration: none;
+  transition: transform 0.3s ease;
 }
-
 #artigos a:hover {
-  color: #00f2fe;
+  transform: scale(1.05);
 }
 
 /* Habilidades (badges) */

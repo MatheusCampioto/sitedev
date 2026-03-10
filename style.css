@@ -7,12 +7,12 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f9fbfd; /* fundo claro */
+  background: #f9fbfd;
   color: #2c3e50;
   line-height: 1.6;
 }
 
-/* Hero (banner topo) */
+/* Hero */
 .hero {
   background: linear-gradient(135deg, #4facfe, #00f2fe);
   color: #fff;
@@ -31,9 +31,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.hero button:hover {
-  transform: scale(1.05);
-}
+.hero button:hover { transform: scale(1.05); }
 
 /* Seções */
 section {
@@ -46,10 +44,8 @@ section {
   animation: fadeUp 1s ease-in;
 }
 
-/* Alternar cores de fundo */
-section:nth-child(even) {
-  background: #f5f7fa;
-}
+/* Alternar cores */
+section:nth-child(even) { background: #f5f7fa; }
 
 /* Títulos */
 section h2 {
@@ -82,14 +78,14 @@ section h2::after {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
-/* Grid para artigos e projetos */
-#artigos, #projetos {
+/* Grid containers */
+.artigos-container, .projetos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
-/* Links "Leia mais" como botões */
+/* Links "Leia mais" */
 #artigos a {
   display: inline-block;
   margin-top: 10px;
@@ -101,11 +97,9 @@ section h2::after {
   text-decoration: none;
   transition: transform 0.3s ease;
 }
-#artigos a:hover {
-  transform: scale(1.05);
-}
+#artigos a:hover { transform: scale(1.05); }
 
-/* Habilidades (badges) */
+/* Habilidades */
 #habilidades ul {
   display: flex;
   flex-wrap: wrap;
@@ -127,11 +121,9 @@ section h2::after {
 }
 
 /* Contato */
-#contato p {
-  margin: 10px 0;
-}
+#contato p { margin: 10px 0; }
 
-/* Botões de contato (mesmo estilo das habilidades) */
+/* Botões de contato */
 .contato-btn {
   display: inline-block;
   background: linear-gradient(135deg, #4facfe, #00f2fe);

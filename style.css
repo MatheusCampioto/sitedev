@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #f9fbfd;
@@ -12,26 +16,32 @@ body {
   line-height: 1.6;
 }
 
-/* hero */
+/* hero com gradiente animado + parallax */
 .hero {
-  background: linear-gradient(135deg, #11998e, #38ef7d);
+  background: linear-gradient(270deg, #11998e, #38ef7d);
+  background-size: 200% 200%;
+  background-attachment: fixed;
+  animation: gradientShift 10s ease infinite;
   color: #fff;
   text-align: center;
   padding: 100px 20px;
-  animation: gradientShift 8s ease infinite; /* animação no fundo */
 }
 .hero h1 {
   font-size: 3rem;
-  animation: fadeInDown 1.5s ease; /* título entrando */
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  white-space: nowrap;
+  animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
 }
 .hero p {
   font-size: 1.3rem;
   margin-top: 10px;
-  animation: fadeInUp 2s ease; /* subtítulo entrando */
+  animation: fadeInUp 2s ease;
 }
 
-/* botão hero como link */
+/* botão hero com ripple */
 .hero-btn {
+  position: relative;
   display: inline-block;
   background: linear-gradient(135deg, #11998e, #38ef7d);
   color: #fff;
@@ -40,35 +50,53 @@ body {
   font-weight: 500;
   text-decoration: none;
   margin-top: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: pulse 2s infinite; /* botão pulsando */
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.hero-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  top: 0;
+  left: -100%;
+  transition: left 0.5s;
+}
+.hero-btn:hover::after {
+  left: 0;
 }
 .hero-btn:hover {
-  transform: scale(1.1) rotate(-2deg);
+  transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
-/* secoes */
+/* secoes com animação de entrada */
 section {
   padding: 60px 30px;
   max-width: 1000px;
   margin: 40px auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   background: #fff;
-  animation: fadeUp 1s ease-in;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal 1s forwards;
 }
+section:nth-child(odd) { animation-delay: 0.3s; }
+section:nth-child(even) { animation-delay: 0.6s; }
 
-/* altera cores */
-section:nth-child(even) { background: #f0fff9; }
-
-/* titulo */
+/* titulo com glow */
 section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #11998e;
   position: relative;
   animation: slideInLeft 1s ease;
+}
+section h2.glow-text {
+  text-shadow: 0 0 5px #38ef7d, 0 0 10px #38ef7d;
+  animation: glowPulse 2s infinite;
 }
 section h2::after {
   content: "";
@@ -81,25 +109,49 @@ section h2::after {
   animation: growLine 1.5s ease;
 }
 
-/* cards */
+/* cards com flip 3D */
 .card {
-  background: #ffffff;
-  padding: 20px;
-  margin: 20px 0;
+  perspective: 1000px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.4s, box-shadow 0.4s;
+  padding: 20px;
 }
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+.card-back {
+  background: #38ef7d;
+  color: #fff;
+  transform: rotateY(180deg);
 }
 
-/* grid containers */
-.artigos-container, .projetos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+/* imagens com zoom */
+img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* ícones girando */
+.icon {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+.icon:hover {
+  transform: rotate(360deg);
 }
 
 /* links "Leia mais" */
@@ -139,9 +191,6 @@ section h2::after {
 }
 
 /* contato */
-#contato p { margin: 10px 0; }
-
-/* botões de contato */
 .contato-btn {
   display: inline-block;
   background: linear-gradient(135deg, #11998e, #38ef7d);
@@ -150,9 +199,8 @@ section h2::after {
   border-radius: 25px;
   font-weight: 500;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
   margin: 5px;
+  transition: all 0.3s ease;
 }
 .contato-btn:hover {
   transform: scale(1.1);
@@ -170,22 +218,12 @@ footer {
 }
 
 /* keyframes */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+@keyframes reveal {
   to { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
 }
 @keyframes slideInLeft {
   from { opacity: 0; transform: translateX(-50px); }
@@ -201,9 +239,21 @@ footer {
   100% { transform: scale(1); }
 }
 @keyframes gradientShift {
-  0% { background: linear-gradient(135deg, #11998e, #38ef7d); }
-  50% { background: linear-gradient(135deg, #38ef7d, #11998e); }
-  100% { background: linear-gradient(135deg, #11998e, #38ef7d); }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 5px #38ef7d; }
+  50% { text-shadow: 0 0 20px #38ef7d; }
+  100% { text-shadow: 0 0 5px #38ef7d; }
 }
 
 /* responsividade */

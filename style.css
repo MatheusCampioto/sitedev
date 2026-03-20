@@ -239,16 +239,28 @@ footer a:hover { color: #e6fff5; }
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
   .navbar {
-    position: relative; /* deixa de ser fixa no mobile */
+    position: relative; /* não fica fixa no mobile */
   }
   .navbar ul {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px; /* menos espaço entre links */
+    padding: 10px 0;
   }
+
   .hero {
-    padding: 80px 20px 40px; /* reduz espaço no mobile */
+    padding: 60px 15px 30px; /* reduz bastante o espaço no topo */
   }
-  .hero h1 { font-size: 2rem; }
-  .hero p { font-size: 1rem; }
-  section { padding: 30px 20px; }
+  .hero h1 { 
+    font-size: 1.8rem; 
+    line-height: 1.2;
+  }
+  .hero p { 
+    font-size: 0.95rem; 
+    margin-top: 8px;
+  }
+
+  section { 
+    padding: 20px 15px; /* menos espaço interno */
+    margin: 15px auto;  /* menos espaço externo */
+  }
 }

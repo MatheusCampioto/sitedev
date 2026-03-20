@@ -248,19 +248,19 @@ footer a:hover { color: #e6fff5; }
   }
 
   .hero {
-    padding: 60px 15px 30px; /* reduz bastante o espaço no topo */
+    padding: 40px 15px 20px; /* reduz bastante o espaço no topo */
   }
   .hero h1 { 
-    font-size: 1.8rem; 
+    font-size: 1.6rem; 
     line-height: 1.2;
   }
   .hero p { 
-    font-size: 0.95rem; 
-    margin-top: 8px;
+    font-size: 0.9rem; 
+    margin-top: 6px;
   }
 
   section { 
-    padding: 20px 15px; /* menos espaço interno */
-    margin: 15px auto;  /* menos espaço externo */
+    padding: 15px 10px; /* menos espaço interno */
+    margin: 10px auto;  /* menos espaço externo */
   }
 }

@@ -12,16 +12,16 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #11998e, #38ef7d, #00c9ff);
-  color: #2c3e50;
+  background: #121212; /* fundo preto/cinza escuro */
+  color: #e0e0e0; /* texto claro */
   line-height: 1.6;
-  min-height: 100%; /* ocupa toda a altura */
+  min-height: 100%;
   display: flex;
-  flex-direction: column; /* organiza em coluna */
+  flex-direction: column;
 }
 
 main {
-  flex: 1; /* empurra o footer para baixo */
+  flex: 1;
 }
 
 /* ===== NAVBAR ===== */
@@ -29,7 +29,7 @@ main {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(17, 153, 142, 0.9);
+  background: rgba(30, 30, 30, 0.95);
   backdrop-filter: blur(6px);
   padding: 12px 0;
   z-index: 1000;
@@ -41,34 +41,34 @@ main {
   list-style: none;
 }
 .navbar a {
-  color: #fff;
+  color: #f5f5f5;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s, transform 0.3s;
 }
 .navbar a:hover {
-  color: #e6fff5;
+  color: #38ef7d;
   transform: scale(1.1);
 }
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #b2f7ef, #c2f9bb);
-  color: #2c3e50;
+  background: url('hero-bg.jpg') center/cover no-repeat, #1e1e1e;
+  color: #f5f5f5;
   text-align: center;
-  padding: 120px 20px 80px; /* espaço extra por causa da navbar fixa */
-  border-bottom: 4px solid #e6fff5;
+  padding: 120px 20px 80px;
+  border-bottom: 4px solid #333;
 }
 .hero h1 {
   font-size: 2.8rem;
-  color: #11998e;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  color: #38ef7d;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
   animation: fadeInDown 1.5s ease;
 }
 .hero p {
   font-size: 1.2rem;
   margin-top: 10px;
-  color: #333;
+  color: #ccc;
   animation: fadeInUp 2s ease;
 }
 
@@ -76,7 +76,7 @@ main {
 .hero-btn {
   position: relative;
   display: inline-block;
-  background: linear-gradient(135deg, #11998e, #38ef7d);
+  background: linear-gradient(135deg, #333, #000);
   color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
@@ -91,7 +91,7 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.2);
   top: 0;
   left: -100%;
   transition: left 0.5s;
@@ -99,7 +99,7 @@ main {
 .hero-btn:hover::after { left: 0; }
 .hero-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
 }
 
 /* ===== SEÇÕES ===== */
@@ -108,8 +108,8 @@ section {
   max-width: 1000px;
   margin: 40px auto;
   border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   opacity: 0;
   transform: translateY(40px);
   animation: reveal 1s forwards;
@@ -120,7 +120,7 @@ section:nth-child(even) { animation-delay: 0.6s; }
 section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #11998e;
+  color: #38ef7d;
   position: relative;
   animation: slideInLeft 1s ease;
 }
@@ -129,7 +129,7 @@ section h2::after {
   display: block;
   width: 60px;
   height: 4px;
-  background: #38ef7d;
+  background: #555;
   margin-top: 8px;
   border-radius: 2px;
   animation: growLine 1.5s ease;
@@ -137,22 +137,23 @@ section h2::after {
 
 /* ===== CARDS ===== */
 .card {
-  background: #fff;
+  background: #2a2a2a;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
   padding: 20px;
   transition: transform 0.4s, box-shadow 0.4s;
+  color: #f5f5f5;
 }
 .card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.8);
 }
 
 /* ===== LINKS "Leia mais" ===== */
 #artigos a {
   display: inline-block;
   margin-top: 10px;
-  background: linear-gradient(135deg, #11998e, #38ef7d);
+  background: #333;
   color: #fff;
   padding: 8px 14px;
   border-radius: 20px;
@@ -170,24 +171,24 @@ section h2::after {
   padding: 0;
 }
 #habilidades li {
-  background: linear-gradient(135deg, #11998e, #38ef7d);
-  color: #fff;
+  background: #000;
+  color: #38ef7d;
   padding: 10px 18px;
   border-radius: 25px;
   font-weight: 500;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
   transition: transform 0.3s, box-shadow 0.3s;
   animation: bounceIn 1.5s ease;
 }
 #habilidades li:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.8);
 }
 
 /* ===== CONTATO ===== */
 .contato-btn {
   display: inline-block;
-  background: linear-gradient(135deg, #11998e, #38ef7d);
+  background: #333;
   color: #fff;
   padding: 10px 18px;
   border-radius: 25px;
@@ -198,25 +199,25 @@ section h2::after {
 }
 .contato-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.8);
 }
 
 /* ===== RODAPÉ ===== */
 footer {
   text-align: center;
   padding: 20px;
-  background: #11998e;
-  color: #fff;
+  background: #000;
+  color: #ccc;
   font-size: 0.9rem;
   animation: fadeIn 2s ease-in;
 }
 footer a {
-  color: #fff;
+  color: #38ef7d;
   text-decoration: none;
   margin: 0 8px;
   transition: color 0.3s;
 }
-footer a:hover { color: #e6fff5; }
+footer a:hover { color: #fff; }
 
 /* ===== ANIMAÇÕES ===== */
 @keyframes fadeInUp {
@@ -247,16 +248,16 @@ footer a:hover { color: #e6fff5; }
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
   .navbar {
-    position: relative; /* não fica fixa no mobile */
+    position: relative;
   }
   .navbar ul {
     flex-direction: column;
-    gap: 8px; /* menos espaço entre links */
+    gap: 8px;
     padding: 10px 0;
   }
 
   .hero {
-    padding: 40px 15px 20px; /* reduz bastante o espaço no topo */
+    padding: 40px 15px 20px;
   }
   .hero h1 { 
     font-size: 1.6rem; 
@@ -268,12 +269,70 @@ footer a:hover { color: #e6fff5; }
   }
 
   section { 
-    padding: 15px 10px; /* menos espaço interno */
-    margin: 10px auto;  /* menos espaço externo */
+    padding: 15px 10px;
+    margin: 10px auto;
   }
 
   footer {
     padding: 15px;
-    font-size: 0.8rem; /* rodapé mais compacto no mobile */
+    font-size: 0.8rem;
   }
+
+  
+}
+
+/* ===== FORMULÁRIO DE CONTATO ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form label {
+  color: #38ef7d;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+form input,
+form textarea {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 10px;
+  color: #f5f5f5;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #38ef7d;
+  box-shadow: 0 0 6px #38ef7d;
+}
+
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botão de envio */
+.contato-btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.contato-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.8);
+  background: #38ef7d;
+  color: #000;
 }

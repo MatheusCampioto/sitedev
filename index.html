@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfólio - Matheus Campioto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsividade -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,17 +28,49 @@
     <a href="https://wa.me/5544999620498" target="_blank" class="hero-btn">Entre em contato</a>
   </header>
 
-  <!-- Conteúdo inicial -->
+  <!-- Conteúdo principal -->
   <main>
-    <section>
+    <section id="intro">
       <h2>Bem-vindo ao meu portfólio</h2>
       <p>Aqui você encontra informações sobre minha trajetória, habilidades, projetos e artigos.</p>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+      <h2>Meus Serviços</h2>
+      <div class="card">💻 Desenvolvimento Web</div>
+      <div class="card">🛠 Suporte Técnico</div>
+      <div class="card">📊 Análise de Dados</div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos">
+      <h2>O que dizem sobre mim</h2>
+      <div class="card">"Matheus é um profissional dedicado e criativo!"</div>
+      <div class="card">"Sempre entrega soluções rápidas e eficazes."</div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <h2>Entre em contato</h2>
+      <!-- Formulário incorporado do Jotform -->
+      <iframe 
+        src="https://form.jotform.com/260788403245056" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        style="border:none;">
+      </iframe>
     </section>
   </main>
 
   <!-- Rodapé -->
-  <footer>
-    <p>© 2026 Matheus Felipe Campioto Catenacci - Todos os direitos reservados</p>
+  <footer class="footer">
+    <p>&copy; 2024 Matheus Campioto. Todos os direitos reservados.</p>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/matheus-campioto/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/matheuscampioto" target="_blank">GitHub</a>
+    </div>
   </footer>
 
 </body>

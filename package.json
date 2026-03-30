@@ -1,0 +1,23 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Este é um projeto de site pessoal/portfólio desenvolvido em HTML + CSS, com deploy automático via Netlify.",
+  "scripts": {
+    "start": "serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusCampioto/sitedev.git"
+  },
+  "keywords": [],
+  "author": "Matheus Campioto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusCampioto/sitedev/issues"
+  },
+  "homepage": "https://github.com/MatheusCampioto/sitedev#readme",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}

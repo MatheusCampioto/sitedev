@@ -1,4 +1,4 @@
-/* reset */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -7,13 +7,13 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%; /* ocupa toda a altura */
+  height: 100%;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #121212; /* fundo preto/cinza escuro */
-  color: #e0e0e0; /* texto claro */
+  background: #121212;
+  color: #e0e0e0;
   line-height: 1.6;
   min-height: 100%;
   display: flex;
@@ -71,8 +71,6 @@ main {
   color: #ccc;
   animation: fadeInUp 2s ease;
 }
-
-/* botão hero */
 .hero-btn {
   position: relative;
   display: inline-block;
@@ -116,7 +114,6 @@ section {
 }
 section:nth-child(odd) { animation-delay: 0.3s; }
 section:nth-child(even) { animation-delay: 0.6s; }
-
 section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -247,38 +244,54 @@ footer a:hover { color: #fff; }
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+  /* Navbar */
   .navbar {
     position: relative;
+    padding: 8px 0;
   }
   .navbar ul {
     flex-direction: column;
-    gap: 8px;
-    padding: 10px 0;
+    align-items: center;
+    gap: 10px;
+  }
+  .navbar a {
+    font-size: 0.9rem;
   }
 
+  /* Hero */
   .hero {
-    padding: 40px 15px 20px;
+    padding: 50px 15px 30px;
   }
-  .hero h1 { 
-    font-size: 1.6rem; 
-    line-height: 1.2;
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
   }
-  .hero p { 
-    font-size: 0.9rem; 
-    margin-top: 6px;
+  .hero p {
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 
-  section { 
-    padding: 15px 10px;
-    margin: 10px auto;
+  /* Seções */
+  section {
+    padding: 20px 15px;
+    margin: 15px auto;
   }
 
+  /* Formulário Jotform */
+  iframe {
+    width: 100%;
+    height: 500px;
+  }
+
+  /* Rodapé */
   footer {
     padding: 15px;
     font-size: 0.8rem;
   }
-
-  
 }
 
 /* ===== FORMULÁRIO DE CONTATO ===== */
